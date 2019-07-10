@@ -14,7 +14,7 @@ void insert_sort(char *arr)
 	int len;
 	len = length(arr);
 	int i, j, tmp;
-	for(i=0; i<len; i++)
+	for(i=0; i<len-1; i++)
 	{
 		for(j=i+1; j<len; j++)
 		{
