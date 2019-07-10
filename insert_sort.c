@@ -9,30 +9,30 @@ int length(char *arr)
 	return i;
 }
 
-void insert_sort(char *arr)
+void insertion_sort(char *arr)
 {
 	int len;
-	len = length(arr);
+	len =length(arr);
 	int i, j, tmp;
-	for(i=0; i<len-1; i++)
+	for(i=1; i<len; i++)
 	{
-		for(j=i+1; j<len; j++)
+		tmp=arr[i];
+		for(j=i-1; j>=0; j--)
 		{
-			if(arr[i]>arr[j])
-			{
-				tmp=arr[j];
-				arr[j]=arr[i];
-				arr[i]=tmp;
-			}
+			if(arr[j]<tmp)
+				break;
+	
+			arr[j+1]=arr[j];
+			arr[j]=tmp;
 		}
-	}
+	}	
 }
 
 int main()
 {
-	char arr[] = "QWERTYUIOPLKJHGFDSAZXCVBNM";
-	printf("old: %s\n", arr);
-	insert_sort(arr);
+	char arr[] = "qwertyuiopasdfghjklzxcvbnm";
+	insertion_sort(arr);
 	printf("new: %s\n", arr);
+
 	return 0;
 }
