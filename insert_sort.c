@@ -12,7 +12,7 @@ int length(char *arr)
 void insertion_sort(char *arr)
 {
 	int len;
-	len =length(arr);
+	len = length(arr);
 	int i, j, tmp;
 	for(i=1; i<len; i++)
 	{
@@ -31,6 +31,7 @@ void insertion_sort(char *arr)
 int main()
 {
 	char arr[] = "qwertyuiopasdfghjklzxcvbnm";
+	printf("old: %s\n", arr);
 	insertion_sort(arr);
 	printf("new: %s\n", arr);
 
